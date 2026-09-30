@@ -1,0 +1,426 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: file:///media/archive/Untitled%20document.zip/Untitleddocument.html
+Subject: 
+Date: Wed, 30 Sep 2026 13:42:18 -0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--QLYROgB1QW3IxDHdxk9bM9HUcDc1JDTJjjrKzTnlV3----"
+
+
+------MultipartBoundary--QLYROgB1QW3IxDHdxk9bM9HUcDc1JDTJjjrKzTnlV3----
+Content-Type: text/html
+Content-ID: <frame-C3BFA4C28F9D86A2DECF47116A007FA3@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///media/archive/Untitled%20document.zip/Untitleddocument.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-b6465c=
+e5-0471-495e-aa3a-b6deee4fb09a@mhtml.blink" /></head><body class=3D"c3 doc-=
+content"><p class=3D"c0"><span class=3D"c1">&nbsp;Among Us Style&lt;/title&=
+gt;</span></p><p class=3D"c0"><span class=3D"c1">&lt;style&gt;</span></p><p=
+ class=3D"c0"><span class=3D"c1">* { box-sizing: border-box; }</span></p><p=
+ class=3D"c0"><span class=3D"c1">body { margin: 0; font: 14px sans-serif; b=
+ackground: #1a1a2e; color: #fff; overflow: hidden; }</span></p><p class=3D"=
+c0"><span class=3D"c1">canvas { display: block; background: linear-gradient=
+(135deg, #0f3460 0%, #16213e 100%); }</span></p><p class=3D"c0"><span class=
+=3D"c1">#ui { position: fixed; top: 0; left: 0; right: 0; padding: 15px; di=
+splay: flex; justify-content: space-between; font-size: 18px; z-index: 10; =
+}</span></p><p class=3D"c0"><span class=3D"c1">#info { flex: 1; }</span></p=
+><p class=3D"c0"><span class=3D"c1">#controls { text-align: right; }</span>=
+</p><p class=3D"c0"><span class=3D"c1">button { padding: 10px 20px; backgro=
+und: #e94560; color: #fff; border: 0; border-radius: 8px; cursor: pointer; =
+font-size: 16px; font-weight: bold; }</span></p><p class=3D"c0"><span class=
+=3D"c1">button:hover { background: #d63447; }</span></p><p class=3D"c0"><sp=
+an class=3D"c1">#status { margin-top: 10px; font-size: 14px; }</span></p><p=
+ class=3D"c0"><span class=3D"c1">&lt;/style&gt;</span></p><p class=3D"c0"><=
+span class=3D"c1">&lt;/head&gt;</span></p><p class=3D"c0"><span class=3D"c1=
+">&lt;body&gt;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><=
+p class=3D"c0"><span class=3D"c1">&lt;div id=3D"ui"&gt;</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &lt;div id=3D"info"&gt;</span></p><p clas=
+s=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &lt;div&gt;=F0=9F=95=B9=EF=B8=8F =
+&lt;strong id=3D"roleText"&gt;Loading...&lt;/strong&gt;&lt;/div&gt;</span><=
+/p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &lt;div id=3D"status" s=
+tyle=3D"font-size: 12px; margin-top: 5px; color: #aaa;"&gt;&lt;/div&gt;</sp=
+an></p><p class=3D"c0"><span class=3D"c1">&nbsp; &lt;/div&gt;</span></p><p =
+class=3D"c0"><span class=3D"c1">&nbsp; &lt;div id=3D"controls"&gt;</span></=
+p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &lt;button id=3D"startBt=
+n"&gt;Start Game&lt;/button&gt;</span></p><p class=3D"c0"><span class=3D"c1=
+">&nbsp; &lt;/div&gt;</span></p><p class=3D"c0"><span class=3D"c1">&lt;/div=
+&gt;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D=
+"c0"><span class=3D"c1">&lt;canvas id=3D"game"&gt;&lt;/canvas&gt;</span></p=
+><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span cla=
+ss=3D"c1">&lt;script&gt;</span></p><p class=3D"c0"><span class=3D"c1">const=
+ canvas =3D document.getElementById('game');</span></p><p class=3D"c0"><spa=
+n class=3D"c1">const ctx =3D canvas.getContext('2d');</span></p><p class=3D=
+"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">ca=
+nvas.width =3D window.innerWidth;</span></p><p class=3D"c0"><span class=3D"=
+c1">canvas.height =3D window.innerHeight - 60;</span></p><p class=3D"c0 c2"=
+><span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">const COL=
+ORS =3D ['#ff6b6b', '#4ecdc4', '#ffe66d', '#5d9cec', '#a78bfa', '#ff9f43', =
+'#7bd389', '#f06595'];</span></p><p class=3D"c0"><span class=3D"c1">const S=
+PEED =3D 2;</span></p><p class=3D"c0"><span class=3D"c1">const PLAYER_SIZE =
+=3D 20;</span></p><p class=3D"c0"><span class=3D"c1">const KILL_DISTANCE =
+=3D 30;</span></p><p class=3D"c0"><span class=3D"c1">const VISION_RANGE =3D=
+ 150;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=
+=3D"c0"><span class=3D"c1">let gameState =3D {</span></p><p class=3D"c0"><s=
+pan class=3D"c1">&nbsp; running: false,</span></p><p class=3D"c0"><span cla=
+ss=3D"c1">&nbsp; gameMode: 'lobby', // lobby, playing, discussion, gameOver=
+</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; players: [],</span></p=
+><p class=3D"c0"><span class=3D"c1">&nbsp; killer: null,</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; killCooldown: 0,</span></p><p class=3D"c0=
+"><span class=3D"c1">&nbsp; discussionTime: 0,</span></p><p class=3D"c0"><s=
+pan class=3D"c1">&nbsp; localPlayer: null</span></p><p class=3D"c0"><span c=
+lass=3D"c1">};</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><=
+p class=3D"c0"><span class=3D"c1">class Player {</span></p><p class=3D"c0">=
+<span class=3D"c1">&nbsp; constructor(id, name, x, y, color, isBot =3D fals=
+e) {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; this.id =3D=
+ id;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; this.name =
+=3D name;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; this.x=
+ =3D x;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; this.y =
+=3D y;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; this.colo=
+r =3D color;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; thi=
+s.isBot =3D isBot;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbs=
+p; this.isKiller =3D false;</span></p><p class=3D"c0"><span class=3D"c1">&n=
+bsp; &nbsp; this.isDead =3D false;</span></p><p class=3D"c0"><span class=3D=
+"c1">&nbsp; &nbsp; this.vx =3D 0;</span></p><p class=3D"c0"><span class=3D"=
+c1">&nbsp; &nbsp; this.vy =3D 0;</span></p><p class=3D"c0"><span class=3D"c=
+1">&nbsp; &nbsp; this.targetX =3D x;</span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; &nbsp; this.targetY =3D y;</span></p><p class=3D"c0"><span c=
+lass=3D"c1">&nbsp; }</span></p><p class=3D"c0 c2"><span class=3D"c1"></span=
+></p><p class=3D"c0"><span class=3D"c1">&nbsp; update() {</span></p><p clas=
+s=3D"c0"><span class=3D"c1">&nbsp; &nbsp; if (this.isDead) return;</span></=
+p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span cl=
+ass=3D"c1">&nbsp; &nbsp; if (this.isBot &amp;&amp; !this.isKiller) {</span>=
+</p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; // Bot AI - wan=
+der randomly</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nb=
+sp; if (Math.random() &lt; 0.02) {</span></p><p class=3D"c0"><span class=3D=
+"c1">&nbsp; &nbsp; &nbsp; &nbsp; this.targetX =3D Math.random() * canvas.wi=
+dth;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbs=
+p; this.targetY =3D Math.random() * canvas.height;</span></p><p class=3D"c0=
+"><span class=3D"c1">&nbsp; &nbsp; &nbsp; }</span></p><p class=3D"c0"><span=
+ class=3D"c1">&nbsp; &nbsp; } else if (this.isKiller &amp;&amp; this.isBot)=
+ {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; // Kil=
+ler bot AI - hunt nearest player</span></p><p class=3D"c0"><span class=3D"c=
+1">&nbsp; &nbsp; &nbsp; let nearest =3D null;</span></p><p class=3D"c0"><sp=
+an class=3D"c1">&nbsp; &nbsp; &nbsp; let minDist =3D Infinity;</span></p><p=
+ class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; gameState.players.for=
+Each(p =3D&gt; {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp;=
+ &nbsp; &nbsp; if (!p.isDead &amp;&amp; !p.isKiller) {</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const dist =
+=3D Math.hypot(p.x - this.x, p.y - this.y);</span></p><p class=3D"c0"><span=
+ class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (dist &lt; minDist) {</=
+span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; minDist =3D dist;</span></p><p class=3D"c0"><span class=3D"c1">&=
+nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nearest =3D p;</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><=
+p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><=
+p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; });</span></p><p cla=
+ss=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; if (nearest) {</span></p>=
+<p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; this.targetX=
+ =3D nearest.x;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; =
+&nbsp; &nbsp; this.targetY =3D nearest.y;</span></p><p class=3D"c0"><span c=
+lass=3D"c1">&nbsp; &nbsp; &nbsp; }</span></p><p class=3D"c0"><span class=3D=
+"c1">&nbsp; &nbsp; }</span></p><p class=3D"c0 c2"><span class=3D"c1"></span=
+></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; // Move toward target=
+</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; const dx =3D th=
+is.targetX - this.x;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &n=
+bsp; const dy =3D this.targetY - this.y;</span></p><p class=3D"c0"><span cl=
+ass=3D"c1">&nbsp; &nbsp; const dist =3D Math.hypot(dx, dy);</span></p><p cl=
+ass=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"=
+c1">&nbsp; &nbsp; if (dist &gt; 5) {</span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; &nbsp; &nbsp; this.x +=3D (dx / dist) * SPEED;</span></p><p =
+class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; this.y +=3D (dy / dist=
+) * SPEED;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; }</sp=
+an></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><sp=
+an class=3D"c1">&nbsp; &nbsp; // Bounds</span></p><p class=3D"c0"><span cla=
+ss=3D"c1">&nbsp; &nbsp; this.x =3D Math.max(PLAYER_SIZE, Math.min(canvas.wi=
+dth - PLAYER_SIZE, this.x));</span></p><p class=3D"c0"><span class=3D"c1">&=
+nbsp; &nbsp; this.y =3D Math.max(PLAYER_SIZE, Math.min(canvas.height - PLAY=
+ER_SIZE, this.y));</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }</s=
+pan></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><s=
+pan class=3D"c1">&nbsp; draw() {</span></p><p class=3D"c0"><span class=3D"c=
+1">&nbsp; &nbsp; if (this.isDead) {</span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fillStyle =3D '#333';</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.globalAlpha =3D 0.4;</s=
+pan></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; } else {</span></p=
+><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fillStyle =3D =
+this.color;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbs=
+p; ctx.globalAlpha =3D 1;</span></p><p class=3D"c0"><span class=3D"c1">&nbs=
+p; &nbsp; }</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p c=
+lass=3D"c0"><span class=3D"c1">&nbsp; &nbsp; // Body</span></p><p class=3D"=
+c0"><span class=3D"c1">&nbsp; &nbsp; ctx.beginPath();</span></p><p class=3D=
+"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.ellipse(this.x, this.y + 2, PLAYE=
+R_SIZE - 3, PLAYER_SIZE, 0, 0, Math.PI * 2);</span></p><p class=3D"c0"><spa=
+n class=3D"c1">&nbsp; &nbsp; ctx.fill();</span></p><p class=3D"c0 c2"><span=
+ class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; /=
+/ Head</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.begin=
+Path();</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.arc(=
+this.x, this.y - 8, PLAYER_SIZE - 5, 0, Math.PI * 2);</span></p><p class=3D=
+"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.fill();</span></p><p class=3D"c0 =
+c2"><span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp;=
+ &nbsp; // Eyes</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; =
+if (!this.isDead) {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nb=
+sp; &nbsp; ctx.fillStyle =3D '#fff';</span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; &nbsp; &nbsp; ctx.beginPath();</span></p><p class=3D"c0"><sp=
+an class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.arc(this.x - 5, this.y - 10, 3, 0,=
+ Math.PI * 2);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &=
+nbsp; ctx.fill();</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp=
+; &nbsp; ctx.beginPath();</span></p><p class=3D"c0"><span class=3D"c1">&nbs=
+p; &nbsp; &nbsp; ctx.arc(this.x + 5, this.y - 10, 3, 0, Math.PI * 2);</span=
+></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fill();</s=
+pan></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><s=
+pan class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fillStyle =3D '#000';</span></p><=
+p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.beginPath();</sp=
+an></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.arc(this=
+.x - 5, this.y - 10, 1.5, 0, Math.PI * 2);</span></p><p class=3D"c0"><span =
+class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fill();</span></p><p class=3D"c0"><sp=
+an class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.beginPath();</span></p><p class=3D=
+"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.arc(this.x + 5, this.y - 1=
+0, 1.5, 0, Math.PI * 2);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp=
+; &nbsp; &nbsp; ctx.fill();</span></p><p class=3D"c0"><span class=3D"c1">&n=
+bsp; &nbsp; }</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p=
+ class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; // Killer indicator</span></=
+p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; if (this.isKiller) {</sp=
+an></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.strokeSt=
+yle =3D '#ff3333';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbs=
+p; &nbsp; ctx.lineWidth =3D 3;</span></p><p class=3D"c0"><span class=3D"c1"=
+>&nbsp; &nbsp; &nbsp; ctx.beginPath();</span></p><p class=3D"c0"><span clas=
+s=3D"c1">&nbsp; &nbsp; &nbsp; ctx.arc(this.x, this.y, PLAYER_SIZE + 5, 0, M=
+ath.PI * 2);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nb=
+sp; ctx.stroke();</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp=
+; &nbsp; // Draw knife</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; =
+&nbsp; &nbsp; ctx.strokeStyle =3D '#ff3333';</span></p><p class=3D"c0"><spa=
+n class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.lineWidth =3D 2;</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.beginPath();</span></p>=
+<p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.moveTo(this.x +=
+ 15, this.y - 15);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbs=
+p; &nbsp; ctx.lineTo(this.x + 25, this.y - 25);</span></p><p class=3D"c0"><=
+span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.stroke();</span></p><p class=3D"=
+c0"><span class=3D"c1">&nbsp; &nbsp; }</span></p><p class=3D"c0 c2"><span c=
+lass=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx=
+.globalAlpha =3D 1;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span>=
+</p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; // Name</span></p><p c=
+lass=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.fillStyle =3D '#fff';</spa=
+n></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.font =3D 'bold 1=
+2px sans-serif';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp;=
+ ctx.textAlign =3D 'center';</span></p><p class=3D"c0"><span class=3D"c1">&=
+nbsp; &nbsp; ctx.fillText(this.name, this.x, this.y + 25);</span></p><p cla=
+ss=3D"c0"><span class=3D"c1">&nbsp; }</span></p><p class=3D"c0 c2"><span cl=
+ass=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp; kill() {</s=
+pan></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; this.isDead =3D tr=
+ue;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }</span></p><p clas=
+s=3D"c0"><span class=3D"c1">}</span></p><p class=3D"c0 c2"><span class=3D"c=
+1"></span></p><p class=3D"c0"><span class=3D"c1">function init() {</span></=
+p><p class=3D"c0"><span class=3D"c1">&nbsp; gameState.players =3D [];</span=
+></p><p class=3D"c0"><span class=3D"c1">&nbsp; gameState.gameMode =3D 'play=
+ing';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; gameState.killCoo=
+ldown =3D 0;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p =
+class=3D"c0"><span class=3D"c1">&nbsp; // Create local player</span></p><p =
+class=3D"c0"><span class=3D"c1">&nbsp; const playerColor =3D COLORS[0];</sp=
+an></p><p class=3D"c0"><span class=3D"c1">&nbsp; const localPlayer =3D new =
+Player('player1', 'You', 100, 100, playerColor, false);</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; gameState.players.push(localPlayer);</spa=
+n></p><p class=3D"c0"><span class=3D"c1">&nbsp; gameState.localPlayer =3D l=
+ocalPlayer;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p c=
+lass=3D"c0"><span class=3D"c1">&nbsp; // Create killer</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; const killer =3D new Player('killer', '=
+=F0=9F=94=AA Killer', 400, 200, '#e74c3c', true);</span></p><p class=3D"c0"=
+><span class=3D"c1">&nbsp; killer.isKiller =3D true;</span></p><p class=3D"=
+c0"><span class=3D"c1">&nbsp; gameState.players.push(killer);</span></p><p =
+class=3D"c0"><span class=3D"c1">&nbsp; gameState.killer =3D killer;</span><=
+/p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span c=
+lass=3D"c1">&nbsp; // Create bots</span></p><p class=3D"c0"><span class=3D"=
+c1">&nbsp; const botNames =3D ['Red', 'Blue', 'Yellow', 'Green', 'Purple', =
+'Orange', 'Pink', 'Cyan'];</span></p><p class=3D"c0"><span class=3D"c1">&nb=
+sp; for (let i =3D 0; i &lt; 7; i++) {</span></p><p class=3D"c0"><span clas=
+s=3D"c1">&nbsp; &nbsp; const bot =3D new Player('bot' + i, botNames[i], Mat=
+h.random() * canvas.width, Math.random() * canvas.height, COLORS[i + 1], tr=
+ue);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; gameState.p=
+layers.push(bot);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }</sp=
+an></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><sp=
+an class=3D"c1">&nbsp; gameState.running =3D true;</span></p><p class=3D"c0=
+"><span class=3D"c1">&nbsp; updateUI();</span></p><p class=3D"c0"><span cla=
+ss=3D"c1">}</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p c=
+lass=3D"c0"><span class=3D"c1">function handleKeyDown(e) {</span></p><p cla=
+ss=3D"c0"><span class=3D"c1">&nbsp; if (!gameState.localPlayer) return;</sp=
+an></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><sp=
+an class=3D"c1">&nbsp; const speed =3D 5;</span></p><p class=3D"c0"><span c=
+lass=3D"c1">&nbsp; switch(e.key.toLowerCase()) {</span></p><p class=3D"c0">=
+<span class=3D"c1">&nbsp; &nbsp; case 'w': gameState.localPlayer.targetY -=
+=3D speed * 10; break;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; =
+&nbsp; case 'a': gameState.localPlayer.targetX -=3D speed * 10; break;</spa=
+n></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; case 's': gameState.=
+localPlayer.targetY +=3D speed * 10; break;</span></p><p class=3D"c0"><span=
+ class=3D"c1">&nbsp; &nbsp; case 'd': gameState.localPlayer.targetX +=3D sp=
+eed * 10; break;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }</spa=
+n></p><p class=3D"c0"><span class=3D"c1">}</span></p><p class=3D"c0 c2"><sp=
+an class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">function upda=
+te() {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; if (!gameState.r=
+unning) return;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p>=
+<p class=3D"c0"><span class=3D"c1">&nbsp; // Update all players</span></p><=
+p class=3D"c0"><span class=3D"c1">&nbsp; gameState.players.forEach(p =3D&gt=
+; p.update());</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><=
+p class=3D"c0"><span class=3D"c1">&nbsp; // Killer tries to kill nearby pla=
+yers</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; if (gameState.kill=
+er &amp;&amp; gameState.killCooldown &lt;=3D 0) {</span></p><p class=3D"c0"=
+><span class=3D"c1">&nbsp; &nbsp; gameState.players.forEach(p =3D&gt; {</sp=
+an></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; if (!p.isDea=
+d &amp;&amp; !p.isKiller) {</span></p><p class=3D"c0"><span class=3D"c1">&n=
+bsp; &nbsp; &nbsp; &nbsp; const dist =3D Math.hypot(p.x - gameState.killer.=
+x, p.y - gameState.killer.y);</span></p><p class=3D"c0"><span class=3D"c1">=
+&nbsp; &nbsp; &nbsp; &nbsp; if (dist &lt; KILL_DISTANCE) {</span></p><p cla=
+ss=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p.kill();</=
+span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; gameState.killCooldown =3D 120; // 2 seconds cooldown</span></p><p clas=
+s=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p clas=
+s=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; }</span></p><p class=3D"c0=
+"><span class=3D"c1">&nbsp; &nbsp; });</span></p><p class=3D"c0"><span clas=
+s=3D"c1">&nbsp; }</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></=
+p><p class=3D"c0"><span class=3D"c1">&nbsp; gameState.killCooldown--;</span=
+></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span=
+ class=3D"c1">&nbsp; // Check win conditions</span></p><p class=3D"c0"><spa=
+n class=3D"c1">&nbsp; const alivePlayers =3D gameState.players.filter(p =3D=
+&gt; !p.isDead &amp;&amp; !p.isKiller);</span></p><p class=3D"c0"><span cla=
+ss=3D"c1">&nbsp; if (alivePlayers.length =3D=3D=3D 0) {</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; gameState.gameMode =3D 'gameOver';=
+</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; gameState.runni=
+ng =3D false;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }</span><=
+/p><p class=3D"c0"><span class=3D"c1">}</span></p><p class=3D"c0 c2"><span =
+class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">function draw() =
+{</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; ctx.fillStyle =3D '#0=
+f3460';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; ctx.fillRect(0,=
+ 0, canvas.width, canvas.height);</span></p><p class=3D"c0 c2"><span class=
+=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp; // Draw grid</=
+span></p><p class=3D"c0"><span class=3D"c1">&nbsp; ctx.strokeStyle =3D 'rgb=
+a(255, 255, 255, 0.05)';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp=
+; ctx.lineWidth =3D 1;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; =
+for (let i =3D 0; i &lt; canvas.width; i +=3D 50) {</span></p><p class=3D"c=
+0"><span class=3D"c1">&nbsp; &nbsp; ctx.beginPath();</span></p><p class=3D"=
+c0"><span class=3D"c1">&nbsp; &nbsp; ctx.moveTo(i, 0);</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.lineTo(i, canvas.height);</spa=
+n></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.stroke();</span>=
+</p><p class=3D"c0"><span class=3D"c1">&nbsp; }</span></p><p class=3D"c0"><=
+span class=3D"c1">&nbsp; for (let i =3D 0; i &lt; canvas.height; i +=3D 50)=
+ {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.beginPath=
+();</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.moveTo(0=
+, i);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; ctx.lineTo=
+(canvas.width, i);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbs=
+p; ctx.stroke();</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }</spa=
+n></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><spa=
+n class=3D"c1">&nbsp; // Draw players</span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; gameState.players.forEach(p =3D&gt; p.draw());</span></p><p =
+class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; // Draw dead body markers</span></p><p class=3D"c0"><span cl=
+ass=3D"c1">&nbsp; gameState.players.forEach(p =3D&gt; {</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; if (p.isDead) {</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fillStyle =3D 'rgba(255=
+, 0, 0, 0.3)';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &=
+nbsp; ctx.beginPath();</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; =
+&nbsp; &nbsp; ctx.arc(p.x, p.y, 25, 0, Math.PI * 2);</span></p><p class=3D"=
+c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fill();</span></p><p class=
+=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fillStyle =3D '#ff6b6b'=
+;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fon=
+t =3D 'bold 16px sans-serif';</span></p><p class=3D"c0"><span class=3D"c1">=
+&nbsp; &nbsp; &nbsp; ctx.textAlign =3D 'center';</span></p><p class=3D"c0">=
+<span class=3D"c1">&nbsp; &nbsp; &nbsp; ctx.fillText('=F0=9F=92=80', p.x, p=
+.y);</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; &nbsp; }</span></p=
+><p class=3D"c0"><span class=3D"c1">&nbsp; });</span></p><p class=3D"c0"><s=
+pan class=3D"c1">}</span></p><p class=3D"c0 c2"><span class=3D"c1"></span><=
+/p><p class=3D"c0"><span class=3D"c1">function updateUI() {</span></p><p cl=
+ass=3D"c0"><span class=3D"c1">&nbsp; const alivePlayers =3D gameState.playe=
+rs.filter(p =3D&gt; !p.isDead);</span></p><p class=3D"c0"><span class=3D"c1=
+">&nbsp; const deadPlayers =3D gameState.players.filter(p =3D&gt; p.isDead)=
+;</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; const alive =3D alive=
+Players.filter(p =3D&gt; !p.isKiller).length;</span></p><p class=3D"c0 c2">=
+<span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp; doc=
+ument.getElementById('roleText').textContent =3D `Crewmate - Alive: ${alive=
+} | Dead: ${deadPlayers.length}`;</span></p><p class=3D"c0"><span class=3D"=
+c1">&nbsp; document.getElementById('status').textContent =3D `Use WASD to m=
+ove | Avoid the =F0=9F=94=AA Killer!`;</span></p><p class=3D"c0 c2"><span c=
+lass=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">&nbsp; if (gameSt=
+ate.gameMode =3D=3D=3D 'gameOver') {</span></p><p class=3D"c0"><span class=
+=3D"c1">&nbsp; &nbsp; document.getElementById('roleText').textContent =3D g=
+ameState.localPlayer.isDead ? '=F0=9F=92=80 You were killed!' : '=F0=9F=8E=
+=89 Survivors won!';</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; }<=
+/span></p><p class=3D"c0"><span class=3D"c1">}</span></p><p class=3D"c0 c2"=
+><span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1">function =
+gameLoop() {</span></p><p class=3D"c0"><span class=3D"c1">&nbsp; update();<=
+/span></p><p class=3D"c0"><span class=3D"c1">&nbsp; draw();</span></p><p cl=
+ass=3D"c0"><span class=3D"c1">&nbsp; updateUI();</span></p><p class=3D"c0">=
+<span class=3D"c1">&nbsp; requestAnimationFrame(gameLoop);</span></p><p cla=
+ss=3D"c0"><span class=3D"c1">}</span></p><p class=3D"c0 c2"><span class=3D"=
+c1"></span></p><p class=3D"c0"><span class=3D"c1">// Controls</span></p><p =
+class=3D"c0"><span class=3D"c1">document.getElementById('startBtn').onclick=
+ =3D init;</span></p><p class=3D"c0"><span class=3D"c1">document.addEventLi=
+stener('keydown', handleKeyDown);</span></p><p class=3D"c0"><span class=3D"=
+c1">window.addEventListener('resize', () =3D&gt; {</span></p><p class=3D"c0=
+"><span class=3D"c1">&nbsp; canvas.width =3D window.innerWidth;</span></p><=
+p class=3D"c0"><span class=3D"c1">&nbsp; canvas.height =3D window.innerHeig=
+ht - 60;</span></p><p class=3D"c0"><span class=3D"c1">});</span></p><p clas=
+s=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0"><span class=3D"c1=
+">gameLoop();</span></p><p class=3D"c0"><span class=3D"c1">&lt;/script&gt;<=
+/span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p><p class=3D"c0">=
+<span class=3D"c1">&lt;/body&gt;</span></p><p class=3D"c0"><span class=3D"c=
+1">&lt;/html&gt;</span></p><p class=3D"c0 c2"><span class=3D"c1"></span></p=
+><p class=3D"c0 c2"><span class=3D"c1"></span></p></body></html>
+------MultipartBoundary--QLYROgB1QW3IxDHdxk9bM9HUcDc1JDTJjjrKzTnlV3----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-b6465ce5-0471-495e-aa3a-b6deee4fb09a@mhtml.blink
+
+@charset "utf-8";
+
+ol { margin: 0px; padding: 0px; }
+
+table td, table th { padding: 0px; }
+
+.c1 { color: rgb(0, 0, 0); font-weight: 400; text-decoration: none; vertica=
+l-align: baseline; font-size: 11pt; font-family: Arial; font-style: normal;=
+ }
+
+.c0 { padding-top: 0pt; padding-bottom: 0pt; line-height: 1.15; orphans: 2;=
+ widows: 2; text-align: left; }
+
+.c3 { background-color: rgb(255, 255, 255); max-width: 468pt; padding: 72pt=
+; }
+
+.c2 { height: 11pt; }
+
+.title { padding-top: 0pt; color: rgb(0, 0, 0); font-size: 26pt; padding-bo=
+ttom: 3pt; font-family: Arial; line-height: 1.15; break-after: avoid; orpha=
+ns: 2; widows: 2; text-align: left; }
+
+.subtitle { padding-top: 0pt; color: rgb(102, 102, 102); font-size: 15pt; p=
+adding-bottom: 16pt; font-family: Arial; line-height: 1.15; break-after: av=
+oid; orphans: 2; widows: 2; text-align: left; }
+
+li { color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial; }
+
+p { margin: 0px; color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial; =
+}
+
+h1 { padding-top: 20pt; color: rgb(0, 0, 0); font-size: 20pt; padding-botto=
+m: 6pt; font-family: Arial; line-height: 1.15; break-after: avoid; orphans:=
+ 2; widows: 2; text-align: left; }
+
+h2 { padding-top: 18pt; color: rgb(0, 0, 0); font-size: 16pt; padding-botto=
+m: 6pt; font-family: Arial; line-height: 1.15; break-after: avoid; orphans:=
+ 2; widows: 2; text-align: left; }
+
+h3 { padding-top: 16pt; color: rgb(67, 67, 67); font-size: 14pt; padding-bo=
+ttom: 4pt; font-family: Arial; line-height: 1.15; break-after: avoid; orpha=
+ns: 2; widows: 2; text-align: left; }
+
+h4 { padding-top: 14pt; color: rgb(102, 102, 102); font-size: 12pt; padding=
+-bottom: 4pt; font-family: Arial; line-height: 1.15; break-after: avoid; or=
+phans: 2; widows: 2; text-align: left; }
+
+h5 { padding-top: 12pt; color: rgb(102, 102, 102); font-size: 11pt; padding=
+-bottom: 4pt; font-family: Arial; line-height: 1.15; break-after: avoid; or=
+phans: 2; widows: 2; text-align: left; }
+
+h6 { padding-top: 12pt; color: rgb(102, 102, 102); font-size: 11pt; padding=
+-bottom: 4pt; font-family: Arial; line-height: 1.15; break-after: avoid; fo=
+nt-style: italic; orphans: 2; widows: 2; text-align: left; }
+------MultipartBoundary--QLYROgB1QW3IxDHdxk9bM9HUcDc1JDTJjjrKzTnlV3------
