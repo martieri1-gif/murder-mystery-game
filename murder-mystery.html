@@ -3,41 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Murder Mystery</title>
+<title>Murder Mystery - Among Us Style</title>
 <style>
-:root{--ink:#172033;--muted:#64708a;--red:#b7354a;--blue:#4169e1;--paper:#fff;--bg:#eef1f8;--panel:#f5f7ff;--shadow:#0004}
-*{box-sizing:border-box}
-body{margin:0;font:16px system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:linear-gradient(135deg,#273557,#74436e);min-height:100vh;padding:24px}
-.wrap{max-width:980px;margin:auto}
-.hero{text-align:center;color:#fff;margin:10px 0 24px}
-.hero h1{font-size:clamp(2rem,6vw,3.5rem);margin:0 0 6px}
-.card{background:var(--paper);border-radius:16px;padding:24px;box-shadow:0 12px 35px var(--shadow);margin-bottom:18px}
-.hidden{display:none!important}
-input,select,button{font:inherit;border-radius:9px;padding:11px 13px}
-input,select{border:2px solid #d7ddea;width:100%;background:#fff}
-button{border:0;background:var(--blue);color:#fff;font-weight:700;cursor:pointer}button:hover{filter:brightness(.92)}
-.actions{display:grid;gap:12px;max-width:430px;margin:auto}
-.or{text-align:center;color:var(--muted);font-weight:700}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.code{font-weight:800;letter-spacing:3px;color:var(--red);font-size:1.3rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.suspect,.clue{background:var(--bg);padding:16px;border-radius:11px;border-left:5px solid var(--blue)}.clue{border-left-color:#e39a2f}.important{border-left-color:var(--red);background:#fff0f2}.chat{height:180px;overflow:auto;background:var(--bg);padding:12px;border-radius:10px;margin-bottom:10px}.msg{background:#fff;padding:8px 10px;border-radius:8px;margin:7px 0}.system{color:var(--muted);font-style:italic}.chatrow{display:flex;gap:8px}.chatrow input{flex:1}.players{display:flex;flex-wrap:wrap;gap:8px}.player{background:#e8ecf7;padding:7px 10px;border-radius:20px;display:flex;align-items:center;gap:9px}.avatar-mini{width:20px;height:20px;border-radius:50%;display:inline-block;border:2px solid rgba(255,255,255,.9);box-shadow:0 0 0 1px rgba(0,0,0,.15)}.avatar-mini::before{content:"";display:block;width:8px;height:5px;background:#dfe7ff;border-radius:8px 8px 4px 4px;margin:3px auto 0}.avatar-mini::after{content:"";display:block;width:12px;height:7px;background:rgba(255,255,255,.22);border-radius:6px;margin:0 auto}.suspect-card{background:linear-gradient(180deg,#fdfdff,#edf3ff);padding:16px;border-radius:14px;border:2px solid #dfe6ff;box-shadow:inset 0 2px 0 rgba(255,255,255,.8)}.crewmate{display:flex;align-items:center;justify-content:center;margin:0 auto 12px;width:94px;height:94px;position:relative}.crewmate .body{position:relative;width:56px;height:70px;border-radius:18px 18px 14px 14px;background:var(--c, #4fd1ff);box-shadow:inset -6px -8px rgba(0,0,0,.07)}.crewmate .body::before{content:"";position:absolute;left:10px;top:-18px;width:36px;height:24px;border-radius:12px 12px 8px 8px;background:var(--c, #4fd1ff);box-shadow:inset 0 -3px rgba(0,0,0,.08)}.crewmate .body::after{content:"";position:absolute;left:16px;top:12px;width:24px;height:14px;border-radius:8px;background:#dfe9ff;box-shadow:0 0 0 2px rgba(0,0,0,.04)}.crewmate .body .legs{position:absolute;bottom:-10px;left:12px;right:12px;height:12px;display:flex;gap:6px}.crewmate .body .legs span{display:block;flex:1;border-radius:0 0 7px 7px;background:rgba(0,0,0,.18)}.notice{padding:14px;border-radius:10px;background:#fff6d9;margin-top:14px}.win{background:#dcf8e6}.lose{background:#ffe1e6}h2{margin-top:0}small{color:var(--muted)}
+* { box-sizing: border-box; }
+body { margin: 0; font: 14px sans-serif; background: #1a1a2e; color: #fff; overflow: hidden; }
+canvas { display: block; background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); }
+#ui { position: fixed; top: 0; left: 0; right: 0; padding: 15px; display: flex; justify-content: space-between; font-size: 18px; z-index: 10; }
+#info { flex: 1; }
+#controls { text-align: right; }
+button { padding: 10px 20px; background: #e94560; color: #fff; border: 0; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; }
+button:hover { background: #d63447; }
+#status { margin-top: 10px; font-size: 14px; }
 </style>
 </head>
-<body><div class="wrap">
-<header class="hero"><h1>🔍 Murder Mystery</h1><div>Solve the crime. Find the culprit.</div></header>
-<section id="lobby" class="card"><h2>Enter the Mystery</h2><div class="actions"><input id="name" maxlength="20" placeholder="Your detective name"><button id="create">Create a game</button><div class="or">OR</div><input id="joinCode" maxlength="6" placeholder="Game code"><button id="join">Join a game</button><small>This downloadable version works offline. Joining a code on another computer requires an online server; use the same device for local play.</small></div></section>
-<section id="game" class="hidden"><div class="card top"><div><small>Game code</small><div class="code" id="code"></div></div><button id="copy">Copy code</button><div><small>Detectives</small><div class="players" id="players"></div></div></div>
-<div class="card"><h2 id="title"></h2><p id="story"></p></div><div class="card"><h2>Suspects</h2><div id="suspects" class="grid"></div></div><div class="card"><h2>Clues</h2><div id="clues"></div></div>
-<div class="card"><h2>Discussion</h2><div id="chat" class="chat"></div><div class="chatrow"><input id="message" placeholder="Share your theory"><button id="send">Send</button></div></div>
-<div class="card"><h2>Cast your vote</h2><div class="chatrow"><select id="vote"></select><button id="submit">Submit vote</button></div><div id="result"></div></div></section></div>
+<body>
+
+<div id="ui">
+  <div id="info">
+    <div>🕹️ <strong id="roleText">Loading...</strong></div>
+    <div id="status" style="font-size: 12px; margin-top: 5px; color: #aaa;"></div>
+  </div>
+  <div id="controls">
+    <button id="startBtn">Start Game</button>
+  </div>
+</div>
+
+<canvas id="game"></canvas>
+
 <script>
-const colors=['#ff6b6b','#4ecdc4','#ffe66d','#5d9cec','#a78bfa','#ff9f43','#7bd389','#f06595'];
-const cases=[{title:'The Diamond Heist',story:"A priceless diamond vanished from the museum vault between 8 PM and midnight. Only three people had access, and the alarm was disabled.",culprit:1,suspects:[['Dr. Sterling','Museum curator','Financial troubles'],['Maya Chen','Security guard','Recently fired'],['Victor Rothschild','Insurance agent','Insurance fraud']],clues:[['A stolen keycard with Dr. Sterling’s photo.',1],['A text about “the job” came from Maya’s phone at 11:45 PM.',1],['Victor was seen near the museum that night.',0],['Muddy footprints were found near the vault.',0]]},{title:'The Poisoned Dinner',story:'Thomas Blackwood collapsed during an exclusive dinner. The poison was in his wine glass, and three guests had the opportunity.',culprit:2,suspects:[['Sophia Blackwood','Wife','Inheritance'],['Richard Blackwood','Son','Gambling debts'],['Elena Rossi','Business partner','Betrayal']],clues:[['An empty poison container was found in Elena’s purse.',1],['Thomas had recently dissolved his partnership with Elena.',1],['Sophia carried a small vial earlier that day.',0],['A wine bottle was purchased that morning.',0]]}];
-let state={players:[],votes:{},case:null,name:'',gameCode:''};const $=id=>document.getElementById(id);function rndColor(){return colors[Math.floor(Math.random()*colors.length)]}function code(){return Math.random().toString(36).slice(2,8).toUpperCase()}function makeAvatar(color){return `<span class="avatar-mini" style="background:${color};"></span>`;}function chat(t,system=false){let d=document.createElement('div');d.className='msg'+(system?' system':'');d.textContent=t;$('chat').append(d);$('chat').scrollTop=99999}function renderPlayers(){let html='';state.players.forEach(p=>html += `<span class="player">${makeAvatar(p.color)}${p.name}</span>`);$('players').innerHTML=html;}function renderSuspects(){let html='';state.case.suspects.forEach((s,i)=>{const color = colors[i % colors.length]; html += `
-<div class="suspect-card">
-  <div class="crewmate" style="--c:${color};"><div class="body"><div class="legs"><span></span><span></span></div></div></div>
-  <h3>${s[0]}</h3>
-  <div><strong>${s[1]}</strong></div>
-  <p>Motive: ${s[2]}</p>
-</div>`;});$('suspects').innerHTML=html;}function start(c,host){state.case=c;state.votes={};state.name=$('name').value.trim();if(!state.name){alert('Enter a detective name first.');return;}const color=rndColor();state.players=[{name:state.name + (host ? ' (host)' : ''), color}];state.gameCode=host?code():$('joinCode').value.trim().toUpperCase()||code();$('lobby').classList.add('hidden');$('game').classList.remove('hidden');$('code').textContent=state.gameCode;renderPlayers();$('title').textContent=c.title;$('story').textContent=c.story;renderSuspects();$('clues').innerHTML=c.clues.map(x=>`<div class="clue ${x[1]?'important':''}">${x[0]}</div>`).join('');$('vote').innerHTML='<option value="">Choose a suspect…</option>'+c.suspects.map((s,i)=>`<option value="${i}">${s[0]}</option>`).join('');chat('Game started: '+c.title,true);if(!host)chat(state.name+' joined the game.',true)}$('create').onclick=()=>start(cases[Math.floor(Math.random()*cases.length)],true);$('join').onclick=()=>{if(!$('joinCode').value.trim())return alert('Enter a game code first.');start(cases[0],false)};$('send').onclick=()=>{let x=$('message').value.trim();if(x){chat(state.name+': '+x);$('message').value=''}};$('message').onkeydown=e=>{if(e.key==='Enter')$('send').click()};$('submit').onclick=()=>{let n=$('vote').value;if(n==='')return alert('Choose a suspect first.');state.votes[state.name]=+n;let s=state.case.suspects[n],c=state.case.suspects[state.case.culprit];$('result').innerHTML=`<div class="notice ${+n===state.case.culprit?'win':'lose'}">You accused <b>${s[0]}</b>.<br>${+n===state.case.culprit?'✅ Correct! You solved the case!':'❌ Not quite. The culprit was '+c[0]+'.'}</div>`};$('copy').onclick=()=>navigator.clipboard?.writeText(state.gameCode).then(()=>alert('Code copied!'))||alert('Your code is '+state.gameCode);
-</script></body></html>
+const canvas = document.getElementById('game');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight - 60;
+
+const COLORS = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#5d9cec', '#a78bfa', '#ff9f43', '#7bd389', '#f06595'];
+const SPEED = 2;
+const PLAYER_SIZE = 20;
+const KILL_DISTANCE = 30;
+const VISION_RANGE = 150;
+
+let gameState = {
+  running: false,
+  gameMode: 'lobby', // lobby, playing, discussion, gameOver
+  players: [],
+  killer: null,
+  killCooldown: 0,
+  discussionTime: 0,
+  localPlayer: null
+};
+
+class Player {
+  constructor(id, name, x, y, color, isBot = false) {
+    this.id = id;
+    this.name = name;
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.isBot = isBot;
+    this.isKiller = false;
+    this.isDead = false;
+    this.vx = 0;
+    this.vy = 0;
+    this.targetX = x;
+    this.targetY = y;
+  }
+
+  update() {
+    if (this.isDead) return;
+
+    if (this.isBot && !this.isKiller) {
+      // Bot AI - wander randomly
+      if (Math.random() < 0.02) {
+        this.targetX = Math.random() * canvas.width;
+        this.targetY = Math.random() * canvas.height;
+      }
+    } else if (this.isKiller && this.isBot) {
+      // Killer bot AI - hunt nearest player
+      let nearest = null;
+      let minDist = Infinity;
+      gameState.players.forEach(p => {
+        if (!p.isDead && !p.isKiller) {
+          const dist = Math.hypot(p.x - this.x, p.y - this.y);
+          if (dist < minDist) {
+            minDist = dist;
+            nearest = p;
+          }
+        }
+      });
+      if (nearest) {
+        this.targetX = nearest.x;
+        this.targetY = nearest.y;
+      }
+    }
+
+    // Move toward target
+    const dx = this.targetX - this.x;
+    const dy = this.targetY - this.y;
+    const dist = Math.hypot(dx, dy);
+
+    if (dist > 5) {
+      this.x += (dx / dist) * SPEED;
+      this.y += (dy / dist) * SPEED;
+    }
+
+    // Bounds
+    this.x = Math.max(PLAYER_SIZE, Math.min(canvas.width - PLAYER_SIZE, this.x));
+    this.y = Math.max(PLAYER_SIZE, Math.min(canvas.height - PLAYER_SIZE, this.y));
+  }
+
+  draw() {
+    if (this.isDead) {
+      ctx.fillStyle = '#333';
+      ctx.globalAlpha = 0.4;
+    } else {
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = 1;
+    }
+
+    // Body
+    ctx.beginPath();
+    ctx.ellipse(this.x, this.y + 2, PLAYER_SIZE - 3, PLAYER_SIZE, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Head
+    ctx.beginPath();
+    ctx.arc(this.x, this.y - 8, PLAYER_SIZE - 5, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Eyes
+    if (!this.isDead) {
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(this.x - 5, this.y - 10, 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(this.x + 5, this.y - 10, 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#000';
+      ctx.beginPath();
+      ctx.arc(this.x - 5, this.y - 10, 1.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(this.x + 5, this.y - 10, 1.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Killer indicator
+    if (this.isKiller) {
+      ctx.strokeStyle = '#ff3333';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, PLAYER_SIZE + 5, 0, Math.PI * 2);
+      ctx.stroke();
+      // Draw knife
+      ctx.strokeStyle = '#ff3333';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(this.x + 15, this.y - 15);
+      ctx.lineTo(this.x + 25, this.y - 25);
+      ctx.stroke();
+    }
+
+    ctx.globalAlpha = 1;
+
+    // Name
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 12px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(this.name, this.x, this.y + 25);
+  }
+
+  kill() {
+    this.isDead = true;
+  }
+}
+
+function init() {
+  gameState.players = [];
+  gameState.gameMode = 'playing';
+  gameState.killCooldown = 0;
+
+  // Create local player
+  const playerColor = COLORS[0];
+  const localPlayer = new Player('player1', 'You', 100, 100, playerColor, false);
+  gameState.players.push(localPlayer);
+  gameState.localPlayer = localPlayer;
+
+  // Create killer
+  const killer = new Player('killer', '🔪 Killer', 400, 200, '#e74c3c', true);
+  killer.isKiller = true;
+  gameState.players.push(killer);
+  gameState.killer = killer;
+
+  // Create bots
+  const botNames = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'Pink', 'Cyan'];
+  for (let i = 0; i < 7; i++) {
+    const bot = new Player('bot' + i, botNames[i], Math.random() * canvas.width, Math.random() * canvas.height, COLORS[i + 1], true);
+    gameState.players.push(bot);
+  }
+
+  gameState.running = true;
+  updateUI();
+}
+
+function handleKeyDown(e) {
+  if (!gameState.localPlayer) return;
+
+  const speed = 5;
+  switch(e.key.toLowerCase()) {
+    case 'w': gameState.localPlayer.targetY -= speed * 10; break;
+    case 'a': gameState.localPlayer.targetX -= speed * 10; break;
+    case 's': gameState.localPlayer.targetY += speed * 10; break;
+    case 'd': gameState.localPlayer.targetX += speed * 10; break;
+  }
+}
+
+function update() {
+  if (!gameState.running) return;
+
+  // Update all players
+  gameState.players.forEach(p => p.update());
+
+  // Killer tries to kill nearby players
+  if (gameState.killer && gameState.killCooldown <= 0) {
+    gameState.players.forEach(p => {
+      if (!p.isDead && !p.isKiller) {
+        const dist = Math.hypot(p.x - gameState.killer.x, p.y - gameState.killer.y);
+        if (dist < KILL_DISTANCE) {
+          p.kill();
+          gameState.killCooldown = 120; // 2 seconds cooldown
+        }
+      }
+    });
+  }
+
+  gameState.killCooldown--;
+
+  // Check win conditions
+  const alivePlayers = gameState.players.filter(p => !p.isDead && !p.isKiller);
+  if (alivePlayers.length === 0) {
+    gameState.gameMode = 'gameOver';
+    gameState.running = false;
+  }
+}
+
+function draw() {
+  ctx.fillStyle = '#0f3460';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw grid
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < canvas.width; i += 50) {
+    ctx.beginPath();
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, canvas.height);
+    ctx.stroke();
+  }
+  for (let i = 0; i < canvas.height; i += 50) {
+    ctx.beginPath();
+    ctx.moveTo(0, i);
+    ctx.lineTo(canvas.width, i);
+    ctx.stroke();
+  }
+
+  // Draw players
+  gameState.players.forEach(p => p.draw());
+
+  // Draw dead body markers
+  gameState.players.forEach(p => {
+    if (p.isDead) {
+      ctx.fillStyle = 'rgba(255, 0, 0, 0.3)';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 25, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#ff6b6b';
+      ctx.font = 'bold 16px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('💀', p.x, p.y);
+    }
+  });
+}
+
+function updateUI() {
+  const alivePlayers = gameState.players.filter(p => !p.isDead);
+  const deadPlayers = gameState.players.filter(p => p.isDead);
+  const alive = alivePlayers.filter(p => !p.isKiller).length;
+
+  document.getElementById('roleText').textContent = `Crewmate - Alive: ${alive} | Dead: ${deadPlayers.length}`;
+  document.getElementById('status').textContent = `Use WASD to move | Avoid the 🔪 Killer!`;
+
+  if (gameState.gameMode === 'gameOver') {
+    document.getElementById('roleText').textContent = gameState.localPlayer.isDead ? '💀 You were killed!' : '🎉 Survivors won!';
+  }
+}
+
+function gameLoop() {
+  update();
+  draw();
+  updateUI();
+  requestAnimationFrame(gameLoop);
+}
+
+// Controls
+document.getElementById('startBtn').onclick = init;
+document.addEventListener('keydown', handleKeyDown);
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight - 60;
+});
+
+gameLoop();
+</script>
+
+</body>
+</html>
